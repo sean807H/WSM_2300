@@ -8,7 +8,7 @@
     --third-color: hsl(160, 100%, 30%);
     --body-color: #fff;
     /* font */
-    --body-fint: "Cute Font", sans-serif;         /* 큐트폰트 문제시 고딕이 대신 나옴 */
+    --body-font: "Cute Font", sans-serif;         /* 큐트폰트 문제시 고딕이 대신 나옴 */
     --h1-font-size: 2rem;                         /* 크롬 > 설정 > 글자 크기: 중간(기본값)일 때, 대문자 M의 너비(16px) = 1rem */
     --h2-font-size: 1.5rem;
     --h3-font-size: 1.25rem;
@@ -23,4 +23,39 @@
     --z-index: 100;
     /* nav */
     --nav-height: 44px;
+}
+body{
+    background-color: var(--body-color);
+    font-family: var(--body-font);
+}
+body>header{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+nav{
+    height: var(--nav-height);
+    background-color: var(--primary-color);
+}
+.nav.container{
+    display: flex;      /* 기분값: 가로로 배치 */
+    justify-content: space-between;     /* 메인축으로 양쪽정렬 */
+    align-items: center;        /* 교차축으로 가운데 정렬 */
+    padding: 0 40px;
+    color: #fff;
+    font-size: var(--h2-font-size);
+}
+.nav-list{
+    display: flex;
+    column-gap: 40px;
+}
+.nav-logo{
+    color: #fff;
+}
+.nav-link{
+    color: #fff;
+}
+.nav-toggle{
+    display: none;
 }
