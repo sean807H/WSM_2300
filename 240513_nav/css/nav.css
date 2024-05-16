@@ -48,6 +48,7 @@ nav{
 }
 .nav-list{
     display: flex;
+    align-items: center;
     column-gap: 40px;
 }
 .nav-logo{
@@ -59,3 +60,32 @@ nav{
 .nav-toggle{
     display: none;
 }
+
+
+/* mobile */
+@media screen and (max-width: 600px) {
+    .nav.container{
+        padding: 0 20px;        /* shrink left/right padding 좌우 여백 좀 줄이자 */
+    }
+    .nav-list{
+        position: absolute;     /* 위치를 다른 곳에 있게 해줌 */
+        top: var(--nav-height);
+        right: 0;
+        left: 0;
+        flex-direction: column;
+        background-color: hsla(200, 100%, 25%, 0.6);
+    }
+    .nav-item{
+        padding: 0.5rem 1rem;       /* 위/아래 = 8px 왼/오른 = 16px */
+        border-bottom: 2px solid white;     /* 링크의 밑줄 */
+        text-align: center;
+        width: 100%;        /* 메뉴 아이템 너비를 넓히자 */
+    }
+    .nav-link{
+        display: block;     /* 넓어진 메뉴 아이템 너비 다 차지하자 */
+    }
+    .nav-toggle{
+        display: block;     /* 햄버거 메뉴 보이자 */
+    }
+}
+
