@@ -29,7 +29,7 @@ body{
     font-family: var(--body-font);
 }
 body>header{
-    position: absolute;
+    position: fixed;            /* 스크롤 해도 이 위치에 고정 */
     top: 0;
     right: 0;
     left: 0;
@@ -39,7 +39,7 @@ nav{
     background-color: var(--primary-color);
 }
 .nav.container{
-    display: flex;      /* 기분값: 가로로 배치 */
+    display: flex;      /* 기본값: 가로로 배치 */
     justify-content: space-between;     /* 메인축으로 양쪽정렬 */
     align-items: center;        /* 교차축으로 가운데 정렬 */
     padding: 0 40px;
@@ -76,6 +76,7 @@ nav{
         flex-direction: column;
         background-color: hsla(200, 100%, 25%, 0.6);
         z-index: -1;    /* nav 뒤로 보내자 */
+        backdrop-filter: blur(8px);     /* 뒷배경 뿌옇게 */
     }
     .nav-item{
         padding: 0.5rem 1rem;       /* 위/아래 = 8px 왼/오른 = 16px */
