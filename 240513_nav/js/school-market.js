@@ -1,13 +1,16 @@
 //data.json -> js -> HTML
 
-const setData = (data) => {
+let allDate;
+
+
+const showData = (data) => {
     let productContainerString = "";
     //data를 하나씩 꺼내서
     data.forEach(element => {
         //article 만들어서
         let articleString = `<article class="class product-item">
             <img src="images/${element.image}" alt="">
-                <div class="name">${element.image}</div>
+                <div class="name">${element.name}</div>
         </article>`;
         productContainerString += articleString;
         
@@ -15,6 +18,11 @@ const setData = (data) => {
     //.product-container 추가
     const productContainerDiv = document.getElementsByClassName("product-container")[0];
     productContainerDiv.innerHTML = productContainerString;
+}
+
+const setData = (data) =>{
+    allData = data;                 // 처음 한번 전체 data 보관하자
+    showData(data);
 }
 
 const getData = () => {
@@ -26,3 +34,10 @@ const getData = () => {
 }
 
 getData();
+
+const searchData = (query) => {
+    if(query === "") showData(allData);                 // 아무것도 입력하지 않으면, 전체 data 보여주자
+    // 전체 data에서 하나 꺼내어 name에 query가 있는지 확인하자
+    let data = allData.filter((oneData) => oneData["name"].includes(query) || oneData["category"].includes(query));
+    showData(data);
+}
