@@ -1,0 +1,35 @@
+.container{
+    width: 800px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 30% 70%;     /* 1fr 1fr; repeat(2,1fr); */
+    grid-template-rows: 4fr 6fr;
+}
+
+.item{
+    /* border: 1px solid gray; */
+    /* 글자 가운데로 */
+    display: grid;
+    place-items: center;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    
+}
+
+.item:first-child{
+    background-color: pink;
+}
+
+.item:nth-child(2){
+    background-color: aqua;
+}
+
+.item:nth-child(3){
+    background-color: peru;
+}
+
+.item:last-child{
+    background-color: aliceblue;
+}
