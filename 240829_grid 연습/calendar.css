@@ -1,0 +1,34 @@
+#calendar-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+}
+
+#calendar-container{
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-bottom: 1px solid #555;
+}
+.item{
+    display: grid;
+    place-items: center;
+}
+.item:nth-child(7n+1){
+    color: #f9b7b7;
+}
+.item:nth-child(7n+7){
+    color: #a8e0f8;
+}
+.week-name{
+    font-weight: bold;
+    color: #aaa;
+    border-bottom: 1px solid #555;
+}
+.other-month{
+    color: #ddd !important;
+}
+
