@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/school-market.css">
+    <link rel="stylesheet" href="css/dormitory.css">
     <link rel="icon" type="image/png" href="images/icon.png">
 
 </head>
+
 <body>
     <header>
         <nav class="nav container">
@@ -32,33 +34,23 @@
             </div>
         </nav>
     </header>
-    <main id="school-market" class="container">
-        <section class="search-container">
-            <input type="text" name="query" id="search-bar" oninput="searchData(this.value)" placeholder="이름, 종류별로 검색하세요~~">
-            <i class="bi bi-search"></i>
-        </section>
-        <section class="product-container">
-            <article class="class product-item">
-                <img src="images/요맘때.jpg" alt="">
-                <div class="name">요맘때</div>
-            </article>
-            <article class="class product-item">
-                <img src="images/무뚝뚝.webp" alt="">
-                <div class="name">무뚝뚝</div>
-            </article>
-            <article class="class product-item">
-                <img src="images/몽쉘.webp" alt="">
-                <div class="name">몽쉘</div>
-            </article>
-            <article class="class product-item">
-                <img src="images/더블치즈후레쉬팡.png" alt="">
-                <div class="name">더블치즈후레쉬팡</div>
-            </article>
-        </section>
-    </section>
+    <main id="calendar">
+        <div id="calendar-header">
+            <button id="prev-month">이전</button>
+            <h1></h1>
+            <button id="next-month">다음</button>
+        </div>
+        <div id="calendar-container">
+
+            <!-- .item{$}*30 -->
+            <!-- .item{item$}*4 -->
+
+        </div>
     </main>
+
     <!-- <img src="https://pbs.twimg.com/media/GNXO7Cxa0AADrrU?format=jpg&name=large" alt=""> -->
     <script src="js/nav.js"></script>
-    <script src="js/school-market.js"></script>
+    <script src="js/dormitory.js"></script>
 </body>
+
 </html>
