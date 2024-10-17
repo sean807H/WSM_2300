@@ -43,6 +43,10 @@ main{
 
 }
 
+#calendar{
+    display: none;
+}
+
 #calendar-header {
     display: flex;
     justify-content: center;
@@ -82,4 +86,25 @@ main{
 
 .other-month {
     color: #ddd !important;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+#dormitory select{
+    font-size: var(--h3-font-size);
+    border: none;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    padding: 15px 20px;
+}
+
+.btn{
+    font-size: var(--h2-font-size);
+    padding: 5px 20px;
+    margin-top: 20px;
+    float: right;   /* 오른쪽 정렬 */
 }
