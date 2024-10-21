@@ -43,10 +43,6 @@ main{
 
 }
 
-#calendar{
-    display: none;
-}
-
 #calendar-header {
     display: flex;
     justify-content: center;
@@ -110,7 +106,25 @@ main{
     float: right;   /* 오른쪽 정렬 */
 }
 
-#selection-washingmachine-time{
+#calendar,
+#selection-washingmachine-time,
+#selection-room-name{
     display: none;
 }
+
+.board-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+}
+
+#board .header{
+    background-color: rgb(254, 214, 214);
+}
+
+#board .item{
+    color: black;
+    border: 1px solid gray;
+    height: 30px;
+}
+
 
