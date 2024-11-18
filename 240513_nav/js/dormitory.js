@@ -87,7 +87,8 @@ const clickDate = (event) => {
         "name": undefined,
         "notification": true
     }
-    newReservation.date = event.target.dataset.date;        //클릭한 날짜 정보 세 예약에 기록하자
+    let dateString = event.target.dataset.date;
+    newReservation.date = new Date(dateString);        //클릭한 날짜 정보 세 예약에 기록하자 "년-월-일" => 날짜 객체
     setPage(2)      // 2페이지로 이동하자
 
 }
@@ -105,7 +106,21 @@ const initWashingmachineTime = () => {
         allWashingmachineTime[washingmachine] = Object.keys(allData.time);        // {"1":["1","2","3"]}
     });
     // 클릭한 날짜의 요일 구하자
+    let weekday =  newReservation.date.getDay();
+    
     // 미리 예약된 예약을 보고, 예약된 세탁기와 예약된 시간이 있으면 초기화 항목에서 빼자
+    weeklyReservations.forEach((weeklyReservation) => {
+        if(weekday === weeklyReservation.weekday){
+            //초기화 한 데이터에서 weeklyReservation에 예약된 세탁기 번호의 시간 번호를 빼자
+            const {washingmachine, time} = weeklyReservation;
+            // const washingmachine = weeklyReservation.washingmachine;
+            // const time = weeklyReservation.time;
+            const index = allWashingmachineTime[washingmachine].indexOf(String(time));   //원하는 시간 찾아서
+            if(index > -1){
+                allWashingmachineTime[washingmachine].splice[index,1];  // 그 시간 삭제하자
+            }
+        }
+    });
     // 사용자가 예약한 예약을 보고, 예약된 세탁기와 예약된 시간이 있으면 초기화 항목에서 빼자
     // 초기화 항목에서 예약된 시간 뺀 후, 모든 시간이 없는 세탁기는 빼자
     // 세탁기 select에 option 만들어 넣자
