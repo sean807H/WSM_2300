@@ -1,7 +1,7 @@
 //selection 3개 가져오자
 const selectionItemDivs = document.getElementsByClassName("selection-item");
 
-//각 페이지 요소 가져오자
+//각 페이지 요소 가져오자(시험문제!!!!)
 const calendarDiv = document.getElementById("calendar");
 const selectionWashingmachineTimeDiv = document.getElementById("selection-washingmachine-time");
 const selectionRoomNameDiv = document.querySelector("#selection-room-name");
@@ -9,6 +9,8 @@ const boardDiv = document.querySelector("#board");
 const pageDivs = [calendarDiv, selectionWashingmachineTimeDiv, selectionRoomNameDiv, boardDiv];
 const washingmachineSelect = document.getElementById("washingmachine");
 const timeSelect = document.querySelector("#time");
+const roomSelect = document.getElementById("room");
+const nameInput = document.querySelector("#name");
 
 // calendarDiv.style.display = "block";
 // selectionWashingmachineTimeDiv.style.display = "block";
@@ -71,6 +73,11 @@ const setPage = (page) => {
     if (page === 2) {     // 세탁기, 시간
         initWashingmachineTime();
     } else if (page === 3) {      // 호실, 이름
+        //세탁기, 시간 번호 기록하자
+        newReservation.washingmachine = washingmachineSelect.value;
+        newReservation.time = timeSelect.value;
+
+        initRoomName();
 
     } else if (page === 4) {      // 세탁기 예약 현황표
 
@@ -153,4 +160,35 @@ const initWashingmachineTime = () => {
     washingmachineSelect.onchange = (event) => setTimeSelect(event);
 
     // [다음] 클릭 => 세탁기번호, 시간 번호를 보관하자 => setPage(3)
+}
+
+//시험문제!!!!!!!!!!!!!!
+const initRoomName = () => {
+    //모든 호실 표시하자
+    let rooms = allData.room;           //allData["room"];  ["701","801"];
+
+    //createElement -> select.appendChild()
+    // rooms.forEach((room) => {
+    //     let newOption = document.createElement("option");
+    //     newOption.value = room;
+    //     newOption.textContent = `${room}호`;        // <option value="701호">701호</option>
+    //     roomSelect.appendChild(newOption);
+    // });
+
+    //string -> select.innerHTML
+    // let roomString = "";
+    // rooms.forEach((room) => {
+    //     roomString += `<option value="${room}">${room}호</option>`;
+    // });
+    // roomSelect.innerHTML = roomString;
+
+    //map()     // ["701","801"] => ["<option value="701">701호</option>,"<option value="801">801호</option>"]
+
+    roomSelect.innerHTML = rooms.map((room) => `<option value="${room}">${room}호</option>`).join("")
+
+    //이름 초기화하자
+    nameInput.value = "";
+
+    //[다음] 클릭 => 호실, 이름 보관하자 => setPage(4)
+    
 }
