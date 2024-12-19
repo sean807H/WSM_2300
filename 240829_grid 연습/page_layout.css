@@ -13,7 +13,7 @@ html{
 
 .container{
     height: 100%;           /* 부모 height의 100%*/
-    display: grid;
+    display: grid;          /* 시험 !!!!!!!!!!!!!!!!!!! */
     grid-template-columns: 200px 1fr 100px;
     grid-template-rows: 44px 1fr 100px;
     grid-template-areas: 

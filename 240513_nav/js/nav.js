@@ -21,6 +21,8 @@ function toggleMenu(){
     navToggleDiv.onclick = (event) => {
 
         navListUl.classList.toggle("show-menu");
+        // show-menu 클래스가 없으면 추가되어 #navList의 display가 block으로 변경되고, 메뉴가 보이게 됩니다.
+        // show-menu 클래스가 있으면 제거되어 #navList의 display가 none으로 변경되고, 메뉴가 숨겨지게 됩니다.
         // navListUl.classList.add("show-menu");
         // navListUl.classList.remove("show-menu");
 

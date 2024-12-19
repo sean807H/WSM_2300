@@ -16,7 +16,8 @@ const displayDate = () => {
 
     const schoolFoodTitleHeader = document.getElementsByClassName("school-food-title")[0];
     const titleText = `🍚${days[day]}요일(${month}/${date})의 메뉴🍚`;
-    schoolFoodTitleHeader.innerText = titleText;
+    schoolFoodTitleHeader.innerText = titleText;    // 텍스트만 변경
+    // titleElement.innerHTML = "<strong>오늘의 메뉴</strong>";  // HTML 태그와 함께 변경
 }
 
 // 급식 정보 날짜 바꾸자
@@ -73,7 +74,7 @@ const setSchoolFoodMenu = (data) => {
 
     //data에서 메뉴들 가져오자(조식, 중식, 석식)
     if (data["mealServiceDietInfo"] === undefined) return;           // 급식이 없거나 데이터 잘못 가져오면, 에러출력하지말고, return
-    const menuData = data["mealServiceDietInfo"][1]["row"];
+    const menuData = data["mealServiceDietInfo"][1]["row"];     // 시험 !!!!!!!!!!!!!!!!!
     // console.log(menuData);
 
     //하나씩 돌면서 clean 작업하자

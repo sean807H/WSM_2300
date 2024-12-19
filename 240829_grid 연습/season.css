@@ -10,7 +10,7 @@
     /* border: 1px solid gray; */
     /* 글자 가운데로 */
     display: grid;
-    place-items: center;
+    place-items: center;    /* 시험 !!!!!!!!!!!! */
 
     /* display: flex;
     justify-content: center;
